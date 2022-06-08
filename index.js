@@ -22,6 +22,7 @@ const getTwoNumbers = () => {
     document.getElementById("app").innerHTML = `
     <div class="input1">
         <form action="">
+            <h1>Первый игрок</h1>
             <button class="input1">Ввести</button>
             <input class="input-first-player" type="text" placeholder="Угадайте число">
             <div class='text1'></div>
@@ -29,6 +30,7 @@ const getTwoNumbers = () => {
     </div>
     <div class="input2">
         <form action="">
+            <h1>Второй игрок</h1>
             <button class="input2">Ввести</button>
             <input class="input-second-player" type="text" placeholder="Угадайте число">
             <div class='text2'></div>
