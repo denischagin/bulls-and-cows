@@ -1,0 +1,7 @@
+{
+  "name": "cows-bulls",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "module": "commonjs"
+}
