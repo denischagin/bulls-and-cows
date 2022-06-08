@@ -14,7 +14,7 @@ export class Game {
       }
     }
     for (let i of current) {
-      if (i in answer && current.indexOf(i) !== answer.indexOf(i)) {
+      if (answer.includes(i) && (current.indexOf(i) !== answer.indexOf(i))) {
         kow++;
       }
     }
