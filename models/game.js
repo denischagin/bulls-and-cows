@@ -1,7 +1,6 @@
 export class Game {
   players = [];
   compareInputAndNumber = (input, numberPlayer, textElement) => {
-    console.log(input);
     const current = input.value.split("");
     const answer = numberPlayer.split("");
     if (!input.value) {

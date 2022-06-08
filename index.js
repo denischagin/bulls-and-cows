@@ -45,7 +45,6 @@ const getTwoNumbers = () => {
       startGame();
     });
   }
-  console.log(game.players);
 };
 
 const startGame = () => {
