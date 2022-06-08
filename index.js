@@ -8,8 +8,7 @@ const game = new Game();
 
 btnNext.addEventListener("click", (e) => {
   e.preventDefault();
-  getTwoNumbers()
-  
+  getTwoNumbers();
 });
 
 const getTwoNumbers = () => {
@@ -21,35 +20,45 @@ const getTwoNumbers = () => {
   }
   if (game.players.length === 2) {
     document.getElementById("app").innerHTML = `
-  <button class="input">Ввести</button>
-  <div class="input1">
-      <input class="input-first-player" type="text" placeholder="Угадайте число">
-      <div class='text1'></div>
-  </div>
-  <div class="input2">
-      <input class="input-second-player" type="text" placeholder="Угадайте число">
-      <div class='text2'></div>
-  </div>`;
-  const buttonPlay = document.querySelector('.input')
-  buttonPlay.addEventListener('click', () => {startGame()})
-  console.log(buttonPlay)
+    <div class="input1">
+        <form action="">
+            <button class="input1">Ввести</button>
+            <input class="input-first-player" type="text" placeholder="Угадайте число">
+            <div class='text1'></div>
+        </form>
+    </div>
+    <div class="input2">
+        <form action="">
+            <button class="input2">Ввести</button>
+            <input class="input-second-player" type="text" placeholder="Угадайте число">
+            <div class='text2'></div>
+        </form>    
+    </div>`;
+    const buttonPlay1 = document.querySelector(".input1");
+    const buttonPlay2 = document.querySelector(".input2");
+    buttonPlay1.addEventListener("click", (e) => {
+      e.preventDefault()
+      startGame();
+    });
+    buttonPlay2.addEventListener("click", (e) => {
+      e.preventDefault()
+      startGame();
+    });
   }
   console.log(game.players);
- 
-}
-
+};
 
 const startGame = () => {
-  const inputFP = document.querySelector('.input-first-player')
-  const inputSP = document.querySelector('.input-second-player')
-  const textFP = document.querySelector('.text1')
-  const textSP = document.querySelector('.text2')
-  const numberFP = game.players[0].number
-  const numberSP = game.players[1].number
+  const inputFP = document.querySelector(".input-first-player");
+  const inputSP = document.querySelector(".input-second-player");
+  const textFP = document.querySelector(".text1");
+  const textSP = document.querySelector(".text2");
+  const numberFP = game.players[0].number;
+  const numberSP = game.players[1].number;
   if (inputFP.value && game.validateEls(inputFP.value) != undefined) {
-    game.compareInputAndNumber(inputFP, numberSP, textFP)
+    game.compareInputAndNumber(inputFP, numberSP, textFP);
   }
   if (inputSP.value && game.validateEls(inputSP.value) != undefined) {
-    game.compareInputAndNumber(inputSP, numberFP, textSP)
+    game.compareInputAndNumber(inputSP, numberFP, textSP);
   }
-}
+};
