@@ -20,21 +20,23 @@ const getTwoNumbers = () => {
   }
   if (game.players.length === 2) {
     document.getElementById("app").innerHTML = `
+    <div class="field">
     <div class="input1">
-        <form action="">
-            <h1>Первый игрок</h1>
-            <button class="input1">Ввести</button>
-            <input class="input-first-player" type="text" placeholder="Угадайте число">
-            <div class='text1'></div>
-        </form>
-    </div>
-    <div class="input2">
-        <form action="">
-            <h1>Второй игрок</h1>
-            <button class="input2">Ввести</button>
-            <input class="input-second-player" type="text" placeholder="Угадайте число">
-            <div class='text2'></div>
-        </form>    
+            <form action="">
+                <h1 class="h1">Первый игрок</h1>
+                <input class="input-first-player inp" type="text" placeholder="Угадайте число">
+                <button class="input1 btn">Ввести</button>
+                <div class='text1 div'></div>
+            </form>
+        </div>
+        <div class="input2">
+            <form action="">
+                <h1 class="h1">Второй игрок</h1>
+                <input class="input-second-player inp" type="text" placeholder="Угадайте число">
+                <button class="input2 btn">Ввести</button>
+                <div class='text2 div'></div>
+            </form>
+        </div>
     </div>`;
     const buttonPlay1 = document.querySelector(".input1");
     const buttonPlay2 = document.querySelector(".input2");
