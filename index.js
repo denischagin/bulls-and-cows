@@ -58,6 +58,11 @@ const startGame = () => {
   const textSP = document.querySelector(".text2");
   const numberFP = game.players[0].number;
   const numberSP = game.players[1].number;
+  if (inputFP.value && inputSP.value) {
+    inputFP.value = ''
+    inputSP.value = ''
+    return alert('Вводить число можно только для одного игрока')
+  }
   if (inputFP.value && game.validateEls(inputFP.value) != undefined) {
     game.compareInputAndNumber(inputFP, numberSP, textFP);
   }

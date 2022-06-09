@@ -30,6 +30,10 @@ export class Game {
     if (!(value && !isNaN(value))) {
       return alert("Нужно ввести число");
     }
+    if (!(Number.isInteger(parseFloat(value)) && parseFloat(value) >= 1000)) {
+      return alert('Неправильное число')
+    }
+
     if (arrayValue.length !== 4) {
       return alert("Нужно ввести 4х значное число");
     }
