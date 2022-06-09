@@ -6,6 +6,7 @@ const btnNext = document.querySelector(".next");
 const input1 = document.querySelector(".input1");
 const game = new Game();
 
+
 btnNext.addEventListener("click", (e) => {
   e.preventDefault();
   getTwoNumbers();
@@ -64,9 +65,9 @@ const startGame = () => {
     return alert('Вводить число можно только для одного игрока')
   }
   if (inputFP.value && game.validateEls(inputFP.value) != undefined) {
-    game.compareInputAndNumber(inputFP, numberSP, textFP);
+    game.compareInputAndNumber(inputFP, numberSP, textFP, game.players[0]);
   }
   if (inputSP.value && game.validateEls(inputSP.value) != undefined) {
-    game.compareInputAndNumber(inputSP, numberFP, textSP);
+    game.compareInputAndNumber(inputSP, numberFP, textSP, game.players[1]);
   }
 };

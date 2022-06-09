@@ -1,8 +1,8 @@
 export class Game {
   players = [];
-  compareInputAndNumber = (input, numberPlayer, textElement) => {
+  compareInputAndNumber = (input, numberOpponent, textElement, player) => {
     const current = input.value.split("");
-    const answer = numberPlayer.split("");
+    const answer = numberOpponent.split("");
     if (!input.value) {
       return;
     }
@@ -14,15 +14,16 @@ export class Game {
       }
     }
     for (let i of current) {
-      if (answer.includes(i) && (current.indexOf(i) !== answer.indexOf(i))) {
+      if (answer.includes(i) && current.indexOf(i) !== answer.indexOf(i)) {
         kow++;
       }
     }
     if (byk === 4) {
       alert("Вы угадали");
     }
-    textElement.innerHTML += `<div class="bk">${input.value} - ${byk} б. ${kow} к.</div>`;
-    input.value = ''
+    player.attempts++;
+    textElement.innerHTML += `<div class="bk"><strong>${player.attempts}. </strong>${input.value} - ${byk} б. ${kow} к.</div>`;
+    input.value = "";
   };
 
   validateEls = (value) => {
@@ -31,7 +32,7 @@ export class Game {
       return alert("Нужно ввести число");
     }
     if (!(Number.isInteger(parseFloat(value)) && parseFloat(value) >= 1000)) {
-      return alert('Неправильное число')
+      return alert("Неправильное число");
     }
 
     if (arrayValue.length !== 4) {
@@ -55,4 +56,10 @@ export class Game {
     }
     return value;
   };
+  
+  playAgain = () => {
+    this.players = []
+  }
+
+
 }
